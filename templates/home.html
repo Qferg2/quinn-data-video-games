@@ -5,5 +5,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h1>Home Page</h1>
+  <h2>How many counties are in each state?</h2>
+
+<form action="/fact">
+  <select name="state">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+<p>{{ demo }}</p>
+
 {% endblock %}
