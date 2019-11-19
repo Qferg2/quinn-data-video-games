@@ -1,1 +1,14 @@
+{% extends "layout.html" %}
 
+{% set active_page = "page1" %}
+
+{% block title %}Video Game Info{% endblock %}
+
+{% block content %}
+  <form action="/gameinfo">
+  <select name="game">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+{% endblock %}
