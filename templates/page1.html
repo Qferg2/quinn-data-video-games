@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page1" %}
+
+{% block title %}Dollars to Pesos{% endblock %}
+
+{% block content %}
+  <form action='/response'>
+      Input a number in Dollars to convert to Pesos<br>
+      <input type="number" name="Dollars">
+      <br><br>
+      <input type="submit">
+    </form>
+{% endblock %}
