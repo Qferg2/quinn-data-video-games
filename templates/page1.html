@@ -5,10 +5,10 @@
 {% block title %}Dollars to Pesos{% endblock %}
 
 {% block content %}
-  <form action='/response'>
-      Input a number in Dollars to convert to Pesos<br>
-      <input type="number" name="Dollars">
-      <br><br>
-      <input type="submit">
-    </form>
+  <form action="/game">
+  <select name="game">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
 {% endblock %}
