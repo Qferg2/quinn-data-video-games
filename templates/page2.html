@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
-{% set active_page = "page1" %}
+{% set active_page = "page2" %}
 
-{% block title %}Video Game Info{% endblock %}
+{% block title %}Info Based on Year{% endblock %}
 
 {% block content %}
-  <form action="/gameinfo">
-  <select name="game">
+  <form action="/yearinfo">
+  <select name="year">
     {{ options }}
   </select>
   <br><br>
