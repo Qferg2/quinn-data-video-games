@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page3" %}
+
+{% block title %}Infographic{% endblock %}
+
+{% block content %}
+  <form action="/yearinfo">
+  <select name="year">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+{% endblock %}
