@@ -36,7 +36,7 @@ def get_game_options(games):
             listOfTitles.append(game['Title'])
             
     for game in listOfTitles:
-        options = options + Markup("<option value=\"" + state + "\">" + state + "</option>")
+        options = options + Markup("<option value=\"" + game + "\">" + game + "</option>")
     return options
         
         
