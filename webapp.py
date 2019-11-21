@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    with open('video_games.json') as videogame_data:
-        games = json.load(videogame_data)
-        return render_template('home.html', options = get_game_options(game))
+        return render_template('home.html')
     
 @app.route("/p1")
 def render_page1():
-    return render_template('page1.html')
+    with open('video_games.json') as videogame_data:
+        games = json.load(videogame_data)
+    return render_template('page1.html', options = get_game_options(game))
 
 @app.route("/p2")
 def render_page2():
