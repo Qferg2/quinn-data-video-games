@@ -7,7 +7,7 @@ app = Flask(__name__)
 def render_main():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
-        return render_template('home.html')
+        return render_template('home.html', options = get_game_options(game))
     
 @app.route("/p1")
 def render_page1():
