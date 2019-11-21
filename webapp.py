@@ -11,14 +11,14 @@ def render_main():
 def render_page1():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
-    return render_template('page1.html', options = get_game_options(game))
+    return render_template('page1.html', options = get_game_options(games))
     
 @app.route("/gameinfo")
-def interesting_demo():
+def interesting_info():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
         game= request.args["game"]
-    return render_template('countyDemo.html', options = get_state_options(counties), demo = get_interesting_demo(counties, state))
+    return render_template('page1.html', options = get_game_options(games), demo = get_interesting_info(games, game))
 
 @app.route("/p2")
 def render_page2():
