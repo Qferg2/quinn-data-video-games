@@ -29,7 +29,7 @@ def render_page3():
     return render_template('page3.html')
         
 def get_interesting_info(games, game):
-    return game['Release']['Console']
+    return games[game]['Release']['Console']
         
 def get_game_options(games):
     options = ""
