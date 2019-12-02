@@ -31,8 +31,8 @@ def render_page3():
         
 def get_interesting_info(games, game):
     for data in games:
-        if games == game:
-            return games[game]['Release']['Console']
+        if data['Title'] == game:
+            return data['Release']['Console']
         
 def get_game_options(games):
     options = ""
