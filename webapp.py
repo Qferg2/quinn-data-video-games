@@ -33,6 +33,7 @@ def get_interesting_info(games, game):
     for data in games:
         if data['Title'] == game:
             return data['Title']
+    for data in games:
         if data['Title'] == game:
             return data['Release']['Console']
         
