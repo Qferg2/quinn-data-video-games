@@ -19,7 +19,7 @@ def interesting_info():
         games = json.load(videogame_data)
     game= request.args["game"]
     print(game)
-    return render_template('page1.html', options = get_game_options(games), name = game, info = get_interesting_info(games, game), info1 = get_interesting_info1(games, game), info2 = get_interesting_info2(games, game))
+    return render_template('page1.html', options = get_game_options(games), name = game, info = get_interesting_info(games, game), info1 = get_interesting_info1(games, game), info2 = get_interesting_info2(games, game), info3 = get_interesting_info3(games, game))
 
 @app.route("/p2")
 def render_page2():
