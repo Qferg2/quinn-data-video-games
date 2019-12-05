@@ -60,10 +60,11 @@ def get_interesting_info3(games, game):
 def get_year_info(games, year):
     max = games[0]['Metrics']['Sales']
     game = games[0]['Title']
-    for year in games:
-        if year['Metrics']['Sales'] > max:
-            max = data['Metrics']['Sales']
-            game = data['Title']
+    for game in games:
+        if data['Year'] == year:
+            if game['Metrics']['Sales'] > max:
+                max = game['Metrics']['Sales']
+                game = game['Title']
     return game
         
 def get_game_options(games):
