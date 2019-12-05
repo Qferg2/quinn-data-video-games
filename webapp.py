@@ -25,6 +25,13 @@ def render_page2():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
     return render_template('page2.html', yearOptions = get_year_options(games))
+    
+@app.route("/yearinfo")
+def year_info():
+    with open('video_games.json') as videogame_data:
+        games = json.load(videogame_data)
+    year = request.args["year"]
+    return render_template('page2.html', options = get_game_options(games)
 
 @app.route("/p3")
 def render_page3():
@@ -64,12 +71,12 @@ def get_game_options(games):
 def get_year_options(games):
     yearOptions = ""
     listOfYears = []
-    for game in games:
-        if game['Release']['Year'] not in listOfYears:
-            listOfYears.append(game['Release']['Year'])
+    for year in games:
+        if year['Release']['Year'] not in listOfYears:
+            listOfYears.append(year['Release']['Year'])
             
-    for game in listOfYears:
-        options = options + Markup("<option value=\"" + game + "\">" + game + "</option>")
+    for year in listOfYears:
+        yearOptions = yearOptions + Markup("<option value=\"" + game + "\">" + game + "</option>")
     return yearOptions
         
         
