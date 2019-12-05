@@ -76,7 +76,7 @@ def get_year_options(games):
             listOfYears.append(year['Release']['Year'])
             
     for year in listOfYears:
-        yearOptions = yearOptions + Markup("<option value=\"" + game + "\">" + game + "</option>")
+        yearOptions = yearOptions + Markup("<option value=\"" + year + "\">" + year + "</option>")
     return yearOptions
         
         
