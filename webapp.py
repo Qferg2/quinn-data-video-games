@@ -62,7 +62,7 @@ def get_year_info(games, year):
     game = ""
     for data in games:
         if data['Release']['Year'] == year:
-            elif data['Metrics']['Sales'] > max:
+            if data['Metrics']['Sales'] > max:
                 max = data['Metrics']['Sales']
                 game = data['Title']
     return game
@@ -71,7 +71,7 @@ def get_year_info1(games, year):
     max = 0
     for data in games:
         if data['Release']['Year'] == year:
-            elif data['Metrics']['Sales'] > max:
+            if data['Metrics']['Sales'] > max:
                 max = data['Metrics']['Sales']
     return max
         
