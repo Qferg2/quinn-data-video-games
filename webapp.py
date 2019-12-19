@@ -31,7 +31,7 @@ def year_info():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
     year = request.args["year"]
-    return render_template('page2.html', yearOptions = get_year_options(games), year = year, yearInfo = get_year_info(games, year), yearInfo1 = get_year_info1(games, year), yearInfo2 = get_year_info2(games, year), yearInfo3 = get_year_info3(games, year), yearInfo4 = get_interesting_info4(games, game), yearInfo5 = get_interesting_info5(games, game))
+    return render_template('page2.html', yearOptions = get_year_options(games), year = year, yearInfo = get_year_info(games, year), yearInfo1 = get_year_info1(games, year), yearInfo2 = get_year_info2(games, year), yearInfo3 = get_year_info3(games, year), yearInfo4 = get_year_info4(games, year), yearInfo5 = get_year_info5(games, year))
 
 @app.route("/p3")
 def render_page3():
