@@ -31,7 +31,7 @@ def year_info():
     with open('video_games.json') as videogame_data:
         games = json.load(videogame_data)
     year = request.args["year"]
-    return render_template('page2.html', yearOptions = get_year_options(games), year = year, yearInfo = get_year_info(games, year), yearInfo1 = get_year_info1(games, year))
+    return render_template('page2.html', yearOptions = get_year_options(games), year = year, yearInfo = get_year_info(games, year), yearInfo1 = get_year_info1(games, year), yearInfo2 = get_year_info2(games, year), yearInfo3 = get_year_info3(games, year))
 
 @app.route("/p3")
 def render_page3():
@@ -83,6 +83,42 @@ def get_year_info1(games, year):
         if str(data['Release']['Year']) == year:
             if int(data['Metrics']['Sales']) > int(max):
                 max = data['Metrics']['Sales']
+    return max
+    
+def get_year_info2(games, year):
+    max = 0
+    game = ""
+    for data in games:
+        if str(data['Release']['Year']) == year:
+            if data['Length']['Completionists']['Average'] > max:
+                max = data['Length']['Completionists']['Average']
+                game = data['Title']
+    return game
+    
+def get_year_info3(games, year):
+    max = 0
+    for data in games:
+        if str(data['Release']['Year']) == year:
+            if int(data['Length']['Completionists']['Average']) > int(max):
+                max = data['Length']['Completionists']['Average']
+    return max
+    
+def get_year_info4(games, year):
+    max = 0
+    game = ""
+    for data in games:
+        if str(data['Release']['Year']) == year:
+            if data['Length']['Main Story']['Average'] > max:
+                max = data['Length']['Main Story']['Average']
+                game = data['Title']
+    return game
+    
+def get_year_info5(games, year):
+    max = 0
+    for data in games:
+        if str(data['Release']['Year']) == year:
+            if int(data['Length']['Main Story']['Average']) > int(max):
+                max = data['Length']['Main Story']['Average']
     return max
         
 def get_game_options(games):
